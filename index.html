@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css" />
+		<title>学成在线首页</title>
+		<!--整体布局思路：
+			1 必须确定页面的版心
+			2 分析页面中的行模块，以及每个行模块中的列模块，页面布局中第一准则
+			3 一行中的列模块经常浮动布局，先确定每个列的大小，之后确定列的位置，页面布局第二准则
+			4制作HTML结构，我们还是遵循，先有结构，后有样式的原则。结构永远最重要
+		-->
+		<!--讲解给出的样式  完成空白页和去除整个页面的样式-->
+	</head>
+	<body>
+		<!--头部区域开始-->
+		<div class="header w">
+			<!--制作logo部分-->
+			<div class="logo">
+				<img src="images/logo.png"/>
+			</div>
+			
+			<!--导航栏部分nav
+				实际开发中，我们不会直接用链接a而是用li包含链接（li+a）
+				1 li+a语义更清晰，一看这就是有条理的列表型内容
+				2 如果直接用a，搜索引擎容易辨别为有堆砌关键字嫌疑，从而影响网站排名
+			-->
+			<div class="nav">
+				<ul>
+					<!--链接本身是行内元素，li是块级元素-->
+					<li><a href="#">首页</a></li>
+					<li><a href="#">课程</a></li>
+					<li><a href="#">职业规划</a></li>
+				</ul>
+			</div>
+			<!--搜索模块-->
+			<div class="search">
+				<input type="text" value="请输入值" />
+				<button></button>
+			</div>
+			<div class="user">
+				<img src="images/user.png"/>
+				qq-welive
+			</div>
+		</div>
+		<!--头部区域结束-->
+		
