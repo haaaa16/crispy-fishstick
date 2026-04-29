@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>243108060213黄俊彦</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.w {
+				width: 1200px;
+				margin: auto;
+			}
+			body {
+				background-color: #f3f5f7;
+			}
+			/*去掉多有li标签前面的点样式*/
+			li {
+				list-style: none;
+			}
+			a {
+				/*超链接不带下划线*/
+				text-decoration: none;
+			}
+			/*清楚精品内容区域中小li的浮动*/
+			.clearfix:before,.clearfix:after {
+				content: "";
+				display: table;
+			}
+			.clearfix:after {
+				clear: both;
+			}
+			.clearfix {
+				*zoom:1;
+			}
+			.header {
+				height: 42px;
+				/*background-color: green;*/
+				/*注意此地方会层叠w里面的margin*/
+				margin: 30px auto;
+			}
+			/*第一天制作heander的内容
+			 1 logo部分*/
+			.logo {
+				float: left;
+				width: 198px;
+				height: 42px;
+			}
+			.nav {
+				/*所有的孩子必须全部浮动*/
+				float: left;
+				/*距离另一个盒子60px*/
+				margin-left: 60px;
+			}
+			.nav ul li {
+				/*让导航栏一行显示，给li加浮动，因为li是块级元素，需要一行显示*/
+				float: left;
+				margin: 0 15px;
+			}	
+			.nav ul li a {
+				display: block;
+				height: 42px;
+				/*撑开盒子的左右距离*/
+				padding: 0 10px;
+				/*设置字体居中显示*/
+				line-height: 42px;
+				font-size: 18px;
+				color: #050505;
+			}
+			.nav ul li a:hover {
+				border-bottom: 2px solid #00a4ff;
+				color: #00a4ff;
+			}
+			/*search模块*/
+			.search {
+				float: left;
+				width: 412px;
+				height: 42px;
+				background-color: deepskyblue;
+				margin-left: 70px;
+			}
+			.search input {
+				float: left;
+				width: 345px;
+				height: 40px;
+				border: 1px solid #00a4ff;
+				border-right: 0;
+				color: #bfbfbf;
+				font-size: 14px;
+				padding-left: 15px;
+			}
+			.search button {
+				float: left;
+				width: 50px;
+				height: 42px;
+				background-color: deepskyblue;
+				/*按钮button默认有个边框需要我们手动去掉*/
+				border: skyblue;
+				background-image: url(./btn.png);
+			}
+			.user {
+				float: right;
+				line-height: 42px;
+				/*调整内容*/
+				margin-right: 30px;
+				font-size: 14px;
+				color: #666;
+			}
+			.main{
+				background-color: #1c036c;
+				position: relative;
+			}
+			.img{
+				margin: 0 auto;
+				width: 1200px;
+				height: 400px;
+			}
+			.menu {
+			    width: 190px;
+			    background-color: #1e1e37; 
+			    color: white; 
+			    padding: 2px;
+			    box-sizing: border-box;
+			    float: left;
+				position: absolute;
+				top: 0px;
+				left: 350px;
+				list-style-type: none;
+				text-align: center;
+				opacity: 0.8;
+			}
+			.menu li {
+			    padding: 10.3px 0;
+			    cursor: pointer;
+			}
+			.card{
+				width: 210px;
+				height: 286px;
+				border: 1px solid #ccc; 
+				color: white;
+				position: absolute;
+				top: 50px;
+				right: 380px;
+				background-color: white;
+			}
+			.title{
+				text-align: center;
+				padding: 5px;
+				border-bottom: 1px solid #ccc;
+				background-color: skyblue;
+			}
+			.course{
+				margin: 10px 0;
+				padding-bottom: 5px;
+				margin-left: 30px
+			}
+			.text1{
+				font-size: 15px;
+				color: black;
+			}
+			.text2{
+				font-size: 11px;
+				color: gray;
+			}
+			.allbin {
+			    display: block;
+			    width: 150px;
+			    margin: 10px auto;
+			    padding: 10px;
+			    border: 1.5px solid royalblue;
+			    text-align: center;
+			    text-decoration: none;
+			    color: blue;
+				font-weight: bold;
+			}
+			.navbar{
+				background-color: #f8f9fa;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 10px 20px;
+				width: 1160px;
+				height: 30px;
+				margin: 5px auto;
+				box-shadow: 1px 1px 1px 1px rgba(128,128, 128, 0.5);
+			}
+			.navleft a:first-child,.navright a{
+				text-decoration: none;
+				color: #007bff;
+				margin-right: 20px;
+				font-weight: bold;
+			}
+			.navleft a{
+				text-decoration: none;
+				margin-right: 20px;
+				color: black;
+			}
+			.navleft a:last-child{
+				margin-right: 0;
+			}
+			.recommend{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			.recommend h3{
+				margin: 20px 0;
+			}
+			.view{
+				float: right;
+				text-decoration: none;
+				color: gray;
+				margin-top: -45px;
+				margin-right: 10px;
+				font-size: 15px;
+			}
+			.grid{
+				display: grid;
+				grid-template-columns: repeat(5,1fr);
+				grid-gap: 30px;
+			}
+			.item{
+				border: 1px solid #ccc;
+				overflow: hidden;
+				background-color: white;
+			}
+			.item img{
+				width: 100%;
+				display: block;
+			}
+			.item h4{
+				padding: 18px;
+				font-size: 14px;
+				font-weight: normal;
+			}
+			.level{
+				color: #f30;
+				padding-left: 10px;
+				font-size: 14px;
+			}
+			.learner{
+				color: #666;
+				padding-left: 10px;
+				font-size: 14px;
+			}
+			.item p{
+				display: inline;
+			}
+			.first{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: white;
+				margin-top: 20px;
+				padding: 10px;
+			}
+			.centent{
+				width: 1200px;
+				margin-left: 320px;
+				position: relative;
+				margin-top: -80px;
+				margin-left: 340px;
+			}
+			.p1 {
+				font-size: 12px;
+				color: gray;
+				margin-top: 15px;
+			}
+			.p2{
+				font-size: 12px;
+				color: gray;
+			}
+			.app{
+				background-color: white;
+				color: deepskyblue;
+				padding: 3px 20px;
+				text-decoration: none;
+				border: 2px solid deepskyblue;
+				position: absolute;
+				top: 115px;
+			}
+			.info{
+				display: flex;
+				justify-content: space-around;
+				padding: 10px;
+				margin-right: 270px;
+				margin-top: -40px;
+			}
+			.list h4{
+				line-height: 30px;
+			}
+			.list{
+				width: 80px;
+				line-height: 17px;
+				padding: 40px;
+				display: block;
+				float: left;
+				margin-bottom: 5px;
+				color: #333;
+				text-decoration: none;
+			}
+			.list li{
+				font-size: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header w">
+			<!--制作logo部分-->
+			<div class="logo">
+				<img src="./8 综合案例---学成在线/logo.png"/>
+			</div>
+			<div class="nav">
+				<ul>
+					<!--链接本身是行内元素，li是块级元素-->
+					<li><a href="#">首页</a></li>
+					<li><a href="#">课程</a></li>
+					<li><a href="#">职业规划</a></li>
+				</ul>
+			</div>
+			<!--搜索模块-->
+			<div class="search">
+				<input type="text" value="请输入值" />
+				<button></button>
+			</div>
+			<div class="user">
+				<img src="./8 综合案例---学成在线/user.png"/>
+				qq-welive
+			</div>
+		</div>
+		<div class="main">
+			<div class="img"><img src="./8 综合案例---学成在线/banner2.png" class="img" /></div>
+				<ul type="none" class="menu">
+					<li><a>前端开发</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>后端开发</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>移动开发</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>人工智能</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>商业预测</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>云计算&大数据</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>运维&测试</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>UI设计</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+					<li><a>产品</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</li>
+				</ul>
+				<div class="card">
+					<h2 class="title">我的课程</h2>
+					<div class="course">
+						<span class="text1">继续学习 程序语言设计</span><br />
+						<span class="text2">正在学习 使用对象</span>
+					</div>
+					<div class="course">
+						<span class="text1">继续学习 程序语言设计</span><br />
+						<span class="text2">正在学习 使用对象</span>
+					</div>
+					<div class="course">
+						<span class="text1">继续学习 程序语言设计</span><br />
+						<span class="text2">正在学习 使用对象</span>
+					</div>
+					<a href="" class="allbin">全部课程</a>
+				</div>
+		</div>
+		<nav class="navbar">
+			<div class="navleft">
+				<a href="">精品推荐</a>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">jQuery</a>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">Spark</a>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">MySQL</a>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">JavaWeb</a>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">HTML</a>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="">CSS</a>
+			</div>
+			<div class="navright">
+				<a href="">修改兴趣</a>
+			</div>
+		</nav>
+		<div class="recommend">
+			<h3>精品推荐</h3>
+			<a href="" class="view">查看全部</a>
+			<div class="grid">
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+			</div><br />
+			<div class="grid">
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+				<div class="item">
+					<img src="./8 综合案例---学成在线/pic.png" alt="" />
+					<h4 class="think">ThinkPHP5.0博客系统实战项目演练</h4>
+					<p class="level">高级</p>
+					<p class="learner">1125人在学习</p>
+				</div>
+			</div>
+		</div>
+		<div class="first">
+			<div class="centent">
+				<img  src="./8 综合案例---学成在线/logo.png" alt="" />
+				<p class="p1">学成在线致力于普及中国最好的教育它与中国一流大学和机构合作提供在线课程</p>
+				<p class="p2">@2017年XTCG Inc。保留所有权</p>
+				<a href="" class="app">下载APP</a>
+			</div>
+			<div class="info">
+				<ul class="list">
+					<h4>关于学成网</h4>
+					<li>关于</li>
+					<li>管理团队</li>
+					<li>工作机会</li>
+					<li>管客户服务</li>
+					<li>帮助</li>
+				</ul>
+				<ul class="list">
+					<h4>新手指南</h4>
+					<li>如何注册</li>
+					<li>如何选择</li>
+					<li>如何拿到毕业证</li>
+					<li>学分是什么</li>
+					<li>考试未通过怎么办</li>
+				</ul>
+				<ul class="list">
+					<h4>合作伙伴</h4>
+					<li>合作机构</li>
+					<li>合作导师</li>
+				</ul>
+			</div>
+		</div>
+		
+	</body>
+</html>
